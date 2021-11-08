@@ -22,10 +22,10 @@ def checkifwon():
     global winner, player, l1, turnUI
     winner = False
 
-    if turn == 'X':
+    if turn == '0':
         player = 'O'
     else:
-        player = 'X'
+        player = '0'
 
     if b1["text"] == b2["text"] == b3["text"] != " ":
         b1.config(bg="green")
@@ -99,14 +99,14 @@ def checkifwon():
 def b_click(b):
     global turn, count
 
-    if b["text"] == " " and turn == 'X':
-        b["text"] = "X"
+    if b["text"] == " " and turn == '0':
+        b["text"] = "0"
         turn = 'O'
         count += 1
         checkifwon()
     elif b["text"] == " " and turn == 'O':
         b["text"] = "O"
-        turn = 'X'
+        turn = '0'
         count += 1
         checkifwon()
 
@@ -115,7 +115,7 @@ def reset():
     global b1, b2, b3, b4, b5, b6, b7, b8, b9, l1, test
     global count, turn
     count = 0
-    turn = 'X'
+    turn = '0'
 
     turnUI = "Player: " + turn
     l1 = Label(root, text=turnUI, height=3, font=("Helvetica", 10, "bold"), bg="SystemButtonFace")
